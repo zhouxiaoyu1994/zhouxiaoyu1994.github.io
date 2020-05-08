@@ -197,13 +197,13 @@
 <p>HBuilder v.8.9.1<br>MUI<br>Xcode 9<br>Macbook Air</p>
 <p>问题描述，使用 HBuilder 提供的云打包，ios带苹果证书。具体提示为：</p>
 <p><code>BuildConfigure Failed 31015 编译错误 Xcode managed, but signing settings require a manually managed profile</code></p>
-<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/01.webp" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/02.webp" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/01.jpg" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/02.jpg" srcset="/img/loading.gif" alt=""></p>
 <p>从错误提示来看，应该是 Xcode 签名配置问题，联想之前刚更新Xcode 9 ，所以搜索重点放在了 Xcode 9 签名配置上。</p>
 <p>结果显示 Xcode 9 取消了之前的手动签名，而是改成了自动签名。下面是官方提供的解决文档：</p>
-<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/03.webp" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/04.webp" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/05.webp" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/03.jpg" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/04.jpg" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/05.jpg" srcset="/img/loading.gif" alt=""></p>
 <p>至此，Xcode 9 签名的问题就解决了。但是！！！由于项目中使用的是 HBuilder 提供的云打包，而打包过程中是无法操作 Xcode 9 的，所以解决方案又有些区别。</p>
 <p>不过不用担心，既然已经知道是签名的问题，所以只要到 iOS 开发者平台上重新生成一张带自动签名的证书就行了。而这个证书就是 HBuilder 云打包所用到的 profile 文件，选择Xcode iOS Wildcard App ID（***），保存，下载。</p>
-<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/06.webp" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/07.webp" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/08.webp" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/06.jpg" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/07.jpg" srcset="/img/loading.gif" alt=""><br><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180115/08.jpg" srcset="/img/loading.gif" alt=""></p>
 <p><strong>参考链接：</strong></p>
 <p><a href="http://www.cnblogs.com/yajunLi/p/7081150.html" target="_blank" rel="noopener">1、Xcode9新特性介绍-中文篇</a><br><a href="https://developer.apple.com/library/content/qa/qa1814/_index.html#//apple_ref/doc/uid/DTS40014030" target="_blank" rel="noopener">2、设置Xcode来自动管理您的配置文件</a><br><a href="http://help.apple.com/xcode/mac/current/#/dev23aab79b4" target="_blank" rel="noopener">3、Assign a project to a team</a></p>
 
