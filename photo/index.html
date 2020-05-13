@@ -159,53 +159,51 @@
 
 <div class="page-content">
   <h1 class="title">且将新火试新茶，诗酒趁年华</h1>
-<div class="container1">
+<div class="card-container">
     <div class="card-wrap">
-        <div class="card">
-            <div class="card-bg" style="background-image: url(https://t8.baidu.com/it/u=1484500186,1503043093&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1589614582&t=7c552d943172b222ee5851cbf7d3aa46);"></div>
-            <div class="card-info">
-                <h1 class="card-header">Canyons</h1>
-                <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <a href="https://frontend-studio-1256354221.file.myqcloud.com/photo/zhipai.jpg" data-fancybox="gallery"
+         data-caption="纸牌塔">
+            <div class="card">
+                <div class="card-bg" style="background-image: url(https://frontend-studio-1256354221.file.myqcloud.com/photo/zhipai.jpg);"></div>
+                <div class="card-info">
+                    <h1 class="card-header">纸牌塔</h1>
+                    <p class="card-content">2020.5.13摄于杭州</p>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="card-wrap">
-        <div class="card">
-            <div class="card-bg" style="background-image: url(http://t7.baidu.com/it/u=3616242789,1098670747&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1589615923&t=ca7b5462d0575cd3824c4d60b5383df2);"></div>
-            <div class="card-info">
-                <h1 class="card-header">Canyons</h1>
-                <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <a href="https://frontend-studio-1256354221.file.myqcloud.com/photo/1991.jpg" target="_blank" rel="noopener" data-fancybox="gallery" data-caption="1999">
+            <div class="card">
+                <div class="card-bg" style="background-image: url(https://frontend-studio-1256354221.file.myqcloud.com/photo/1991.jpg);"></div>
+                <div class="card-info">
+                    <h1 class="card-header">1999</h1>
+                    <p class="card-content">十里湖光，对南屏晚妆。2019.11.16.摄于杭州西湖</p>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="card-wrap">
-        <div class="card">
-            <div class="card-bg" style="background-image: url(http://t9.baidu.com/it/u=583874135,70653437&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1589615923&t=804a380faf786de64255b8e0a4728a6f);"></div>
-            <div class="card-info">
-                <h1 class="card-header">Canyons</h1>
-                <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <a href="https://unsplash.it/600.jpg?image=256" target="_blank" rel="noopener" data-fancybox="gallery" data-caption="昆仑雪山">
+            <div class="card">
+                <div class="card-bg" style="background-image: url(https://unsplash.it/600.jpg?image=256);"></div>
+                <div class="card-info">
+                    <h1 class="card-header">Canyons</h1>
+                    <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="card-wrap">
-        <div class="card">
-            <div class="card-bg" style="background-image: url(http://t9.baidu.com/it/u=583874135,70653437&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1589615923&t=804a380faf786de64255b8e0a4728a6f);"></div>
-            <div class="card-info">
-                <h1 class="card-header">Canyons</h1>
-                <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-        </div>
-    </div>
-    <div class="card-wrap">
-        <div class="card">
-            <div class="card-bg" style="background-image: url(http://t9.baidu.com/it/u=583874135,70653437&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1589615923&t=804a380faf786de64255b8e0a4728a6f);"></div>
-            <div class="card-info">
-                <h1 class="card-header">Canyons</h1>
-                <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-        </div>
+        </a>
     </div>
 </div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+<script>
+    // fancyBox 灯箱插件
+    $('[data-fancybox="gallery"]').fancybox({
+        // Options will go here
+    });
+</script>
 <style>
 @media (min-width: 576px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl {
@@ -228,7 +226,7 @@
     text-align: center;
     margin-top: 8rem;
 }
-.container1 {
+.card-container {
     margin: 40px 0;
     font-size: 14px;
     font-weight: 500;
@@ -280,6 +278,7 @@
     position: absolute;
     bottom: 0;
     color: #fff;
+    width: 100%;
     transform: translateY(40%);
     transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -308,11 +307,12 @@
 .card-header {
     position: relative;
     z-index: 1;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 700;
     text-shadow: rgba(0,0,0, 0.5) 0 10px 10px;
 }
 .card-wrap:hover .card-info {
+    width: 100%;
     transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     transform: translateY(0);
 }
@@ -341,6 +341,10 @@
         rgba(0,0,0, 0.66) 0 30px 60px 0,
         inset #333 0 0 0 5px,
         inset #fff 0 0 0 6px;
+}
+.card-active {
+    transform: scale(1.5, 1.5);
+    z-index: 999;
 }
 </style>
 </div>
