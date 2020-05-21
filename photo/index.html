@@ -157,208 +157,44 @@
 </div>
 <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.js"></script>
 <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
 <script>
-    // 相册数据
-    let list = [
-        {
-            title: '纸牌塔',
-            info: '九层之台，起于累土。2020.4.12.摄于杭州DOGHOUSE',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/photo/zhipai.jpg'
-        },
-        {
-            title: '西湖夜游',
-            info: '十里湖光，对南屏晚妆。2019.11.16.摄于杭州西湖',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/photo/xihuyeyou.jpg'
-        },
-        {
-            title: '蒙古郡王府',
-            info: '十年饮冰，难凉热血，那一夜我也曾梦见百万骑兵。2019.10.05.摄于鄂尔多斯郡王府',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/photo/junwangfu.jpg'
-        },
-        {
-            title: '库布齐沙漠',
-            info: '越过沙丘，谁人与我等候。2019.10.04.摄于库布齐沙漠',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/shamo.jpg'
-        },
-        {
-            title: '鄂尔多斯草原',
-            info: '犀渠玉剑良家子，白马金羁侠少年。2019.10.03.摄于鄂尔多斯草原',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/caoyuan.jpg'
-        },
-        {
-            title: '推啊前端开放日',
-            info: '面基为主，学习为辅。2019.06.29.摄于杭州兑吧集团',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/tuia.jpg'
-        },
-        {
-            title: '2050',
-            info: '年青人，因科技而团聚。2019.04.27.摄于杭州云栖小镇',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/2050.jpg'
-        },
-        {
-            title: '登山灵顺寺',
-            info: '朝登灵顺寺，朱衣暗点头。2019.01.25.摄于浙大玉泉校区',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/lingshun.jpg'
-        },
-        {
-            title: '13届D2',
-            info: '艺术点亮代码，代码改变世界。2019.01.06.摄于杭州和达希尔顿逸林酒店',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/D2.jpg'
-        },
-        {
-            title: '婆那加占婆塔',
-            info: '人生天地间，忽如远行客。2018.09.12.摄于越南婆那加占婆塔',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/yuenanta.jpg'
-        },
-        {
-            title: '心形气泡',
-            info: '生活总是在不经意间显露出一丝奇迹。2018.09.10.摄于越南黑岛珊瑚区',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/xinxingqipao.jpg'
-        },
-        {
-            title: '少年与海',
-            info: '行到水穷处，坐看云起时。2018.09.09.摄于越南珍珠岛',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/shaonianhai.jpg'
-        },
-        {
-            title: '2018创马',
-            info: '为亚运赋能。2018.09.05.摄于杭州西溪湿地',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/2018chuangma.jpg'
-        },
-        {
-            title: '逆风破浪',
-            info: '长风破浪会有时，直挂云帆济沧海。2018.06.11.摄于浙江桐庐',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/polang.jpg'
-        },
-        {
-            title: '骑行',
-            info: '车如流水马如龙，花月正春风。2018.06.11.摄于浙江桐庐',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/fengchi.jpg'
-        },
-        {
-            title: '林中小屋',
-            info: '几时归去，作个闲人，对一张琴，一壶酒，一溪云。2018.06.12.摄于浙江桐庐',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/xiaowu.jpg'
-        },
-        {
-            title: '竹杖芒鞋',
-            info: '竹杖芒鞋轻胜马 一蓑烟雨任平生。2018.06.12.摄于浙江桐庐',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/pubu.jpg'
-        },
-        {
-            title: '一哏一笑',
-            info: '娘娘，风浪太大了。2018.04.14.摄于杭州剧院',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/qingqu.jpg'
-        },
-        {
-            title: 'Merry Christmas',
-            info: '叮叮当，叮叮当，铃儿响叮当。2017.12.25.摄于杭州创业陪跑空间',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/Merry.jpg'
-        },
-        {
-            title: '12届D2',
-            info: '匠心。2017.12.16.摄于杭州阿里巴巴西溪园区',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/12D2.jpg'
-        },
-        {
-            title: '青芝坞',
-            info: '杭州山地越野赛。2017.11.26.摄于杭州青芝坞',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/qingzhiwu.jpg'
-        },
-        {
-            title: '赋能',
-            info: '创新引领，创造价值。2017.10.18.摄于杭州中豪望江国际',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/funeng.jpg'
-        },
-        {
-            title: '2017创马',
-            info: '健康奔跑，轻松创业。2017.09.16.摄于杭州滨江最美跑道',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/2017chuangma.jpg'
-        },
-        {
-            title: '水花四溅',
-            info: '蹦的越高，摔得越惨，真痛。2017.09.07.摄于马来西亚仙本那',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/shuihuasijian.jpg'
-        },
-        {
-            title: '平板支撑',
-            info: '来一场男子汉的对决。2017.09.06.摄于马来西亚美人鱼岛',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/pingbanzhicheng.jpg'
-        },
-        {
-            title: '碧水青天',
-            info: '云在青天水在瓶。2017.09.05.摄于马来西亚马布岛',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/bishuiqingtian.jpg'
-        },
-        {
-            title: '淘宝造物节',
-            info: '年轻就要造。2017.07.09.摄于杭州G20展馆',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/zaowujie.jpg'
-        },
-        {
-            title: '苏州',
-            info: '劝君把酒向斜阳，且向花间留晚照。2017.05.20.摄于苏州',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/suzhou.jpg'
-        },
-        {
-            title: '千岛湖光',
-            info: '落日湖光三万顷，尽随飞鸟带将回。2017.04.30.摄于浙江千岛湖',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/qiandaohu.jpg'
-        },
-        {
-            title: '药师佛铜像',
-            info: '三面药师琉璃光王佛。2017.01.31.摄于泰州古寿圣寺',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/yaoshifo.jpg'
-        },
-        {
-            title: '雷峰塔',
-            info: '西湖南岸夕照山，夕照山上雷峰尖。2016.10.16.摄于西湖雷峰塔',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/leifengta.jpg'
-        },
-        {
-            title: '恩典堂',
-            info: '我留下平安给你们，我将我的平安赐给你们。2016.09.18.摄于兴化恩典堂',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/xinghua.jpg'
-        },
-        {
-            title: '热血从军行',
-            info: '男儿何不带吴钩，收取关山五十州。2015.10.24.摄于武警南阳市支队',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/nanyang.jpg'
-        },
-        {
-            title: '青梅竹马',
-            info: '郎骑竹马来，绕床弄青梅。2013.04.28.摄于西塘古镇',
-            imgSrc: 'https://frontend-studio-1256354221.file.myqcloud.com/img/xitang.jpg'
-        },
-    ]
-    // 插入html
-    let dataHtml = '';
-    for (let item of list) {
-        dataHtml += `<div class="photo-wrap"><figure>`;
-        dataHtml += `<a href="${item.imgSrc}" data-fancybox="gallery" data-width="800">`;
-        dataHtml += `<div class="photo">`;
-        dataHtml += `<div class="photo-bg" style="background-image: url(${item.imgSrc});"></div>`
-        dataHtml += `<div class="photo-info">`;
-        dataHtml += `<h1 class="photo-header">${item.title}</h1>`;
-        dataHtml += `<p class="photo-content">${item.info}</p>`;
-        dataHtml += `</div>`;
-        dataHtml += `</div>`;
-        dataHtml += `<figcaption>`;
-        dataHtml += `<h5>${item.title}</h5>`;
-        dataHtml += `<p>${item.info}</p>`;
-        dataHtml += `</figcaption>`;
-        dataHtml += `</a>`;
-        dataHtml += `</figure></div>`;
-    }
-    $('.photo-container').append(dataHtml);
-    // fancyBox 灯箱插件
-    $('[data-fancybox="gallery"]').fancybox({
-        // 设置相册介绍
-        caption: function(instance, item) {
-            return $(this).find('figcaption').html();
-        }
-    });
+    jQuery(document).ready(function ($) {
+        $.getJSON("photos.json",function(result){
+            // 相册数据
+            let list =  result.photos
+            // 插入html
+            let dataHtml = '';
+            for (let item of list) {
+                dataHtml += `<div class="photo-wrap"><figure>`;
+                dataHtml += `<a href="${item.imgSrc}" data-fancybox="gallery" data-width="800">`;
+                dataHtml += `<div class="photo">`;
+                dataHtml += `<div class="photo-bg lazy" style="background-image: url('/img/loading.gif')" data-original="${item.imgSrc}"></div>`
+                dataHtml += `<div class="photo-info">`;
+                dataHtml += `<h1 class="photo-header">${item.title}</h1>`;
+                dataHtml += `<p class="photo-content">${item.info}</p>`;
+                dataHtml += `</div>`;
+                dataHtml += `</div>`;
+                dataHtml += `<figcaption>`;
+                dataHtml += `<h5>${item.title}</h5>`;
+                dataHtml += `<p>${item.info}</p>`;
+                dataHtml += `</figcaption>`;
+                dataHtml += `</a>`;
+                dataHtml += `</figure></div>`;
+            }
+            $('.photo-container').append(dataHtml);
+            // 背景图懒加载
+            $('div.lazy').lazyload();
+            // fancyBox 灯箱插件
+            $('[data-fancybox="gallery"]').fancybox({
+                // 设置相册介绍
+                caption: function(instance, item) {
+                    return $(this).find('figcaption').html();
+                }
+            });
+        });
+    })
 </script>
 <style>
 @media (min-width: 576px) {
