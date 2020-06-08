@@ -41,11 +41,40 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?"🌙":"🌞";
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+    		$("#dark").html("🌞");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+    		$("#dark").html("🌙");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -143,7 +172,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    59 字
+                    61 字
                   </span>
                 
 
@@ -182,7 +211,8 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>有人说社会黑暗</p>
+              <p>现实</p>
+<p>有人说社会黑暗</p>
 <p>世界不公</p>
 <p>可我看到的却并不如此</p>
 <p>没有终日的黑夜</p>

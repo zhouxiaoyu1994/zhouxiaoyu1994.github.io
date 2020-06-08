@@ -41,11 +41,40 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?"🌙":"🌞";
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+    		$("#dark").html("🌞");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+    		$("#dark").html("🌙");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -149,12 +178,18 @@
                 
 
 <div class="list-group">
-  <p class="h4">共计 21 篇文章</p>
+  <p class="h4">共计 22 篇文章</p>
   <hr>
   
     
       
       <p class="h5">2015</p>
+    
+    <a href="/2015/06/16/2015061601/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">奔跑</span>
+      <span style="float: right;">06-16</span>
+    </a>
+  
     
     <a href="/2015/06/14/2015061401/" class="list-group-item list-group-item-action">
       <span class="archive-post-title">南京恋歌-四季组曲</span>

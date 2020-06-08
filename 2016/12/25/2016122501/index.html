@@ -17,7 +17,7 @@
   <meta name="description" content="前端学习交流">
   <meta name="author" content="小侯爷">
   <meta name="keywords" content="">
-  <title>解决因inline-block元素导致的空白间距和元素下沉 - 小侯爷的前端画室</title>
+  <title>《追光者2》评测：虐心之作 手残勿进 - 小侯爷的前端画室</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -161,8 +161,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2018-04-02 00:00">
-                    2018年4月2日 凌晨
+                  <time datetime="2016-12-25 00:00">
+                    2016年12月25日 凌晨
                   </time>
                 </div>
               
@@ -172,7 +172,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    388 字
+                    1.2k 字
                   </span>
                 
 
@@ -182,7 +182,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    5
+                    11
                      分钟
                   </span>
                 
@@ -211,81 +211,21 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>CSS 中的 <code>display:inline-block</code> 应该是最为常用元素之一，可以将原本占据一行的块级元素，转变为可以并列显示的行内块级元素。</p>
-<h2 id="空白间距"><a href="#空白间距" class="headerlink" title="空白间距"></a>空白间距</h2><p><code>display:inline-block</code> 常被用来代替float进行页面布局，不过正所谓金无足赤、人无完人，当使用 <code>inline-block</code> 后会出现 4px 的空白间距。</p>
-<p>关于如何消除这 4px 的空白间距，网上已经有了不少方法，其中个人觉得用 <code>font-size:0</code> 解决空白间距是最为方便简单的了。</p>
-<p>下面做个简单的Demo</p>
-<pre><code class="hljs plain">.html
-&lt;body&gt;
-    &lt;div class&#x3D;&quot;a&quot;&gt;&lt;&#x2F;div&gt;
-    &lt;div class&#x3D;&quot;b&quot;&gt;&lt;&#x2F;div&gt;
-&lt;&#x2F;body&gt;
-
-.css
-.a&#123;
-    width: 100px;
-    height: 100px;
-    background: #1c8cff;
-    display: inline-block;
-
-&#125;
-.b&#123;
-    width: 100px;
-    height: 100px;
-    background: #676767;
-    display: inline-block;
-&#125;</code></pre>
-
-<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180402/1.png" srcset="/img/loading.gif" alt="Paste_Image.png"></p>
-<p>接着为两个盒子的父元素添加 <code>font-size：0</code></p>
-<pre><code class="hljs plain">body&#123;
-    font-size: 0;
-&#125;</code></pre>
-
-<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180402/2.png" srcset="/img/loading.gif" alt="Paste_Image.png"></p>
-<h2 id="元素下沉"><a href="#元素下沉" class="headerlink" title="元素下沉"></a>元素下沉</h2><p>另外，当给<code>inline-block</code>元素中添加东西时，发现其元素也会随之下沉。</p>
-<pre><code class="hljs plain">.html
-&lt;body&gt;
-    &lt;div class&#x3D;&quot;a&quot;&gt;&lt;span&gt;test&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;
-    &lt;div class&#x3D;&quot;b&quot;&gt;&lt;&#x2F;div&gt;
-    &lt;div class&#x3D;&quot;c&quot;&gt;&lt;&#x2F;div&gt;
-&lt;&#x2F;body&gt;
-.css
-body&#123;
-    font-size: 0;
-&#125;
-.a&#123;
-    width: 100px;
-    height: 100px;
-    background: #1c8cff;
-    display: inline-block;
-    font-size: 21px;
-&#125;
-.b&#123;
-    width: 100px;
-    height: 100px;
-    background: #676767;
-    display: inline-block;
-&#125;
-.c&#123;
-    width: 100px;
-    height: 100px;
-    background: #00a74a;
-    display: inline-block;
-&#125;</code></pre>
-
-<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180402/3.png" srcset="/img/loading.gif" alt="Paste_Image.png"><br>而解决方法可以用<code>vertical-align</code>属性。</p>
-<pre><code class="hljs plain">.css
-.a&#123;
-    width: 100px;
-    height: 100px;
-    background: #1c8cff;
-    display: inline-block;
-    vertical-align: top;
-    font-size: 21px;
-&#125;</code></pre>
-
-<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20180402/4.png" srcset="/img/loading.gif" alt="Paste_Image.png"></p>
+              <p>苹果商店的新游推荐了一款名为《追光者2》的手游。苹果编辑推荐的游戏，质量上还是很有保障的，于是便下载试玩了一下。首先需要声明的是，因为之前并没有玩过前作《追光者》，所以在看到《追光者2》官方介绍上虐心、慎入、黑暗这些字眼时，让人觉得这是一款情节感人、偏向暗黑的虐心游戏。但事实上，当进入游戏后，才发现这款游戏不只虐心更虐手。</p>
+<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20161225/1.jpg" srcset="/img/loading.gif" alt=""></p>
+<p><strong>“黑夜给了我一双黑色的眼睛，而我却用它来寻找光明。”</strong></p>
+<p>如果要给这款游戏的剧情写一个文案的话，这首顾城的诗应该最适合不过了。《追光者2》的主角名叫露西，是光之巨塔的守护者，但是光之巨塔逐渐失去明亮，城市的光也四处分散，梦魇在黑暗中出现了，为了能让城市再度恢复活力，寻回失去的光芒，她踏上了探索梦中世界的旅途。</p>
+<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20161225/2.jpg" srcset="/img/loading.gif" alt=""></p>
+<p>因为没有玩过《追光者》，所以不知道《追光者2》相比较前作在画质上究竟提高了多少。但是就以这款游戏来说，精致的画面确实让人眼前一亮。简约偏卡通的画风，加上淡雅柔和的色彩，为玩家营造了一个昏暗而富有质感的梦境世界。</p>
+<p>除此之外，游戏中的音效与内容结合也恰到好处，角色在移动的过程当中还会有轻轻的钢琴声作为引导的节奏。随着钢琴声起起伏伏，心情也变得莫名的紧张。而这种即时反馈的音效设置，颇有点像当年名噪一时的节奏大师。</p>
+<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20161225/3.jpg" srcset="/img/loading.gif" alt=""></p>
+<p>《追光者2》的操作看似非常简单，游戏中有两个按键，左边是月亮，右边是星星。同时在游戏中砖块下也会有相对应的月亮星星图案，而玩家需要根据相应的图案进行按键，按错了就会死亡，重新开始。如果只是这样的话也不是非常难，只要看仔细后都能轻松过关。</p>
+<p>难点在于游戏中还有各式各样的机关陷阱会阻拦玩家前进，比如尖刺、天外飞石还有黑风等等。大大缩短了玩家的思考时间，在行动的瞬间，一个不小心就能让玩家一命呜呼。而作为手残玩家，不出意外的在第一关就已经连续死了十多次（跪地哭）。</p>
+<p><img src="https://frontend-studio-1256354221.file.myqcloud.com/img/20161225/4.jpg" srcset="/img/loading.gif" alt=""></p>
+<p>如果排除那坑爹的游戏操作，按照类型划分，《追光者2》应该属于一款解谜闯关类游戏，四个章节总共100多个关卡的设计，绝对能让玩家在生和死的考验中找到光明的意义（偷笑）。同时玩家在冒险中还可以收集光芒，而光芒能够帮助露西培育光之树，解锁新的道具和服装。</p>
+<p>除了解谜收集的玩法之外，游戏中还加入了RPG游戏中常见的技能元素，比如生命之泉可以在开局增加血量，光之力可以提升收集光芒的数量、时之力可以降低解谜玩法的难度细数等。当然这些技能并不是免费的，需要花费光芒进行解锁，而如果光芒不够的话，玩家也可以选择氪金。</p>
+<p>说到氪金， 游戏中还设置了体力元素，当玩家挑战关卡，会减少相应的体力，而体力不够时，游戏为玩家提供了三种解决方案，一是等待时间让体力自动恢复，二是氪金充值体力，三是观看游戏中所提供的广告来获得体力。不得不说，这割韭菜的手法还真不错，土豪和贫民玩家都照顾到了。至少，手残的评测君就已经观看了7、8遍广告了。</p>
+<p>总而言之，《追光者2》以简单而又饱含深意的游戏剧情、加上淡雅简约的画风，在目前充斥着卖肉、三国、西游、仙侠等题材的游戏市场上，宛如一股清流，带给玩家清新舒服的感觉。另外虽然游戏中加入氪金元素，但是并没有无底线的滥用坑钱，而是在游戏性和赚钱之间找到了一个较为不错的平衡点。只是其复杂的操作玩法，让手残玩家感到有些累觉不爱。</p>
 
             </article>
             <hr>
@@ -295,10 +235,21 @@ body&#123;
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%BC%80%E5%8F%91%E4%B8%8E%E5%A1%AB%E5%9D%91/">开发与填坑</a>
+                      <a class="hover-with-bg" href="/categories/%E6%B8%B8%E6%88%8F%E6%9D%82%E8%B0%88/">游戏杂谈</a>
                     
                   </div>
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F/">游戏</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AF%84%E6%B5%8B/">评测</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%BF%BD%E5%85%89%E8%80%85/">追光者</a>
+                    
+                  </div>
                 
               </div>
               
@@ -309,9 +260,9 @@ body&#123;
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2018/05/19/2018051901/">
+                      <a href="/2016/12/31/2016123101/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">现实</span>
+                        <span class="hidden-mobile">《最终幻想觉醒》评测：英雄幻想的延续</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -319,8 +270,8 @@ body&#123;
                   <div class="post-next col-6">
                     
                     
-                      <a href="/2018/01/15/2018011501/">
-                        <span class="hidden-mobile">解决 HBuilder (MUI) 下无法打包 iOS（使用苹果证书）的 ipa文件，适用于Xcode9</span>
+                      <a href="/2016/11/06/2016110601/">
+                        <span class="hidden-mobile">《冒险村物语》评测：勇者背后的剥削者</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -494,7 +445,7 @@ body&#123;
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "解决因inline-block元素导致的空白间距和元素下沉&nbsp;",
+        "《追光者2》评测：虐心之作 手残勿进&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

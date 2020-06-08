@@ -41,11 +41,40 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?"🌙":"🌞";
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+    		$("#dark").html("🌞");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+    		$("#dark").html("🌙");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -148,7 +177,7 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<ul class="category-tree-list"><li class="category-tree-list-item"><a class="category-tree-list-link" href="/categories/%E5%BC%80%E5%8F%91%E4%B8%8E%E5%A1%AB%E5%9D%91/">开发与填坑</a><span class="category-tree-list-count">5</span></li><li class="category-tree-list-item"><a class="category-tree-list-link" href="/categories/%E5%BD%B1%E8%AF%84/">影评</a><span class="category-tree-list-count">1</span></li><li class="category-tree-list-item"><a class="category-tree-list-link" href="/categories/%E6%B8%B8%E6%88%8F%E6%9D%82%E8%B0%88/">游戏杂谈</a><span class="category-tree-list-count">4</span></li><li class="category-tree-list-item"><a class="category-tree-list-link" href="/categories/%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B/">诗词歌赋</a><span class="category-tree-list-count">7</span></li><li class="category-tree-list-item"><a class="category-tree-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E9%AA%8C%E5%AE%A4/">项目实验室</a><span class="category-tree-list-count">4</span></li></ul>
+<ul class="category-tree-list"><li class="category-tree-list-item"><a class="category-tree-list-link" href="/categories/%E5%BC%80%E5%8F%91%E4%B8%8E%E5%A1%AB%E5%9D%91/">开发与填坑</a><span class="category-tree-list-count">5</span></li><li class="category-tree-list-item"><a class="category-tree-list-link" href="/categories/%E5%BD%B1%E8%AF%84/">影评</a><span class="category-tree-list-count">1</span></li><li class="category-tree-list-item"><a class="category-tree-list-link" href="/categories/%E6%B8%B8%E6%88%8F%E6%9D%82%E8%B0%88/">游戏杂谈</a><span class="category-tree-list-count">5</span></li><li class="category-tree-list-item"><a class="category-tree-list-link" href="/categories/%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B/">诗词歌赋</a><span class="category-tree-list-count">7</span></li><li class="category-tree-list-item"><a class="category-tree-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E9%AA%8C%E5%AE%A4/">项目实验室</a><span class="category-tree-list-count">4</span></li></ul>
 
               </div>
             </div>

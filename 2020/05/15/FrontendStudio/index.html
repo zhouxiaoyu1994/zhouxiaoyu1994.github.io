@@ -41,11 +41,40 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/dark.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?"🌙":"🌞";
+    //点击事件
+    function switchDarkMode() {
+    	if ($('body').hasClass('dark')) {
+    		$("#dark").html("🌞");
+    		document.body.classList.remove('dark');
+    		localStorage.setItem('noDark', '1');
+    		localStorage.setItem('dark', '0');
+    	} else {
+    		$("#dark").html("🌙");
+    		document.body.classList.add('dark');
+    		localStorage.setItem('dark', '1');
+    		localStorage.setItem('noDark', '0');
+    	}
+    }
+  </script>
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -143,7 +172,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    256 字
+                    262 字
                   </span>
                 
 
@@ -187,7 +216,7 @@
             <p>已开源</p>
           </div>
 
-<h3 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h3><p>开源地址：<a href="https://github.com/xiaohouye1995/Frontend-studio" target="_blank" rel="noopener">https://github.com/xiaohouye1995/Frontend-studio</a><br>预览(国外)：<a href="https://xiaohouye1995.github.io" target="_blank" rel="noopener">https://xiaohouye1995.github.io</a><br>预览(国内)：<a href="https://xiaohouye1995.gitee.io" target="_blank" rel="noopener">https://xiaohouye1995.gitee.io</a></p>
+<h3 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h3><p>开源地址：<a href="https://github.com/xiaohouye1995/Frontend-studio" target="_blank" rel="noopener">https://github.com/xiaohouye1995/Frontend-studio</a><br>预览(国外)：<a href="https://xiaohouye1995.github.io" target="_blank" rel="noopener">https://xiaohouye1995.github.io</a><br>预览(国内)：<a href="https://xiaohouye1995.gitee.io">https://xiaohouye1995.gitee.io</a></p>
 <h2 id="框架-工具"><a href="#框架-工具" class="headerlink" title="框架/工具"></a>框架/工具</h2><ul>
 <li>hexo <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></li>
 <li>hexo-theme-fluid <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="noopener">https://github.com/fluid-dev/hexo-theme-fluid</a></li>
@@ -201,8 +230,9 @@
 <li><input checked="" disabled="" type="checkbox"> 文章、技术、随笔、诗词</li>
 <li><input checked="" disabled="" type="checkbox"> 评论插件</li>
 <li><input checked="" disabled="" type="checkbox"> 相册集</li>
-<li><input disabled="" type="checkbox"> 暗黑模式</li>
+<li><input checked="" disabled="" type="checkbox"> 暗黑模式</li>
 <li><input checked="" disabled="" type="checkbox"> 游戏名作堂</li>
+<li><input disabled="" type="checkbox"> 诗词信笺模块</li>
 </ul>
 <h2 id="填坑"><a href="#填坑" class="headerlink" title="填坑"></a>填坑</h2><h3 id="TypeError-…-lazyload-is-not-a-function"><a href="#TypeError-…-lazyload-is-not-a-function" class="headerlink" title="TypeError $(…).lazyload is not a function"></a>TypeError $(…).lazyload is not a function</h3><p>在$.getJSON() 方法下使用 Query.lazyload 懒加载插件时，会导致 $() 冲突。<br><strong>解决方案：</strong> 重新定义$()</p>
 <pre><code class="hljs plain">jQuery(document).ready(function ($) &#123;
