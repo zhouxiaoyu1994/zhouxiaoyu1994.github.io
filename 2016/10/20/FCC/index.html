@@ -62,7 +62,7 @@
     let sun = '<img class="dark-img" src="/img/sun.png" srcset="/img/loading.gif">';
     let moon = '<img class="dark-img" src="/img/moon.png" srcset="/img/loading.gif">'
     // document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?"🌙":"🌞";
-    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?sun:moon;
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?moon:sun;
     //点击事件
     function switchDarkMode() {
     	if ($('body').hasClass('dark')) {
