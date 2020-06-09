@@ -59,16 +59,21 @@
         document.body.classList.add('dark');
       }
     }
-    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?"🌙":"🌞";
+    let sun = '<img class="dark-img" src="/img/sun.png" srcset="/img/loading.gif">';
+    let moon = '<img class="dark-img" src="/img/moon.png" srcset="/img/loading.gif">'
+    // document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?"🌙":"🌞";
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?sun:moon;
     //点击事件
     function switchDarkMode() {
     	if ($('body').hasClass('dark')) {
-    		$("#dark").html("🌞");
+    		// $("#dark").html("🌞");
+        $("#dark").html("<img class='dark-img' src='/img/sun.png'>");
     		document.body.classList.remove('dark');
     		localStorage.setItem('noDark', '1');
     		localStorage.setItem('dark', '0');
     	} else {
-    		$("#dark").html("🌙");
+    		// $("#dark").html("🌙");
+        $("#dark").html("<img class='dark-img' src='/img/moon.png'>");
     		document.body.classList.add('dark');
     		localStorage.setItem('dark', '1');
     		localStorage.setItem('noDark', '0');

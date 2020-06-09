@@ -2,12 +2,9 @@
 #dark {
   cursor: pointer;
   position: fixed;
-  right: 40px;
-  bottom: 32px;
-  width: 16px;
-  height: 14px;
+  right: -8px;
+  bottom: -8px;
   z-index: 100;
-  font-size: 20px;
 }
 /*暗黑模式*/
 .dark {
@@ -33,6 +30,9 @@
 }
 .dark img {
   filter: brightness(50%);
+}
+.dark .dark-img {
+  width: 2rem;
 }
 .dark p,
 .dark .index-info a {
