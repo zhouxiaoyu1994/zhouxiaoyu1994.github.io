@@ -23,7 +23,7 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -177,7 +177,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    262 字
+                    244 字
                   </span>
                 
 
@@ -240,18 +240,18 @@
 <li><input disabled="" type="checkbox"> 诗词信笺模块</li>
 </ul>
 <h2 id="填坑"><a href="#填坑" class="headerlink" title="填坑"></a>填坑</h2><h3 id="TypeError-…-lazyload-is-not-a-function"><a href="#TypeError-…-lazyload-is-not-a-function" class="headerlink" title="TypeError $(…).lazyload is not a function"></a>TypeError $(…).lazyload is not a function</h3><p>在$.getJSON() 方法下使用 Query.lazyload 懒加载插件时，会导致 $() 冲突。<br><strong>解决方案：</strong> 重新定义$()</p>
-<pre><code class="hljs plain">jQuery(document).ready(function ($) &#123;
-		$.getJSON(&quot;photos.json&quot;,function(result)&#123;
-			&#x2F;&#x2F; 相册数据
-			let list &#x3D;  result.photos
-			console.log(&#39;list&#39;, list);
-		    &#x2F;&#x2F; 插入html
-		    let dataHtml &#x3D; &#39;&#39;;
-		    $(&#39;.photo-container&#39;).append(dataHtml);
-			&#x2F;&#x2F; 背景图懒加载
-			$(&#39;div.lazy&#39;).lazyload();
+<div class="hljs"><pre><code class="hljs js">jQuery(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">$</span>) </span>&#123;
+		$.getJSON(<span class="hljs-string">"photos.json"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">result</span>)</span>&#123;
+			<span class="hljs-comment">// 相册数据</span>
+			<span class="hljs-keyword">let</span> list =  result.photos
+			<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'list'</span>, list);
+		    <span class="hljs-comment">// 插入html</span>
+		    <span class="hljs-keyword">let</span> dataHtml = <span class="hljs-string">''</span>;
+		    $(<span class="hljs-string">'.photo-container'</span>).append(dataHtml);
+			<span class="hljs-comment">// 背景图懒加载</span>
+			$(<span class="hljs-string">'div.lazy'</span>).lazyload();
 		&#125;);
-	&#125;)</code></pre>
+	&#125;)</code></pre></div>
             </article>
             <hr>
             <div>
