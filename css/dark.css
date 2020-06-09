@@ -4,6 +4,7 @@
   position: fixed;
   right: -16px;
   bottom: 16%;
+  width: 4rem;
   z-index: 100;
 }
 .dark-img {
