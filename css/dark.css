@@ -3,12 +3,13 @@
   cursor: pointer;
   position: fixed;
   right: -16px;
-  bottom: 16%;
+  top: 26%;
   width: 4rem;
+  height: 4rem;
   z-index: 100;
 }
 .dark-img {
-  width: 4rem;
+  width: 100%;
 }
 /*暗黑模式*/
 .dark {
