@@ -27,8 +27,9 @@ var Fireworks = function() {
 		self.canvas.onselectstart = function() {
 			return false;
 		};
-
-		self.canvas.width = self.cw = 600;
+		
+		self.canvas.width = self.cw = self.canvasContainer.width();
+		// self.canvas.width = self.cw = 290;
 		self.canvas.height = self.ch = 400;
 
 		self.particles = [];
@@ -354,14 +355,16 @@ var Fireworks = function() {
 			self.mx = e.pageX - self.canvasContainer.offset().left;
 			self.my = e.pageY - self.canvasContainer.offset().top;
 			self.currentHue = rand(self.hueMin, self.hueMax);
-			self.createFireworks(self.cw / 2, self.ch, self.mx, self.my);
+			// self.createFireworks(self.cw / 2, self.ch, self.mx, self.my);
+			self.createFireworks(self.cw / 2, 0, self.mx, self.my);
 
 			$(self.canvas).on('mousemove.fireworks', function(e) {
 				var randLaunch = rand(0, 5);
 				self.mx = e.pageX - self.canvasContainer.offset().left;
 				self.my = e.pageY - self.canvasContainer.offset().top;
 				self.currentHue = rand(self.hueMin, self.hueMax);
-				self.createFireworks(self.cw / 2, self.ch, self.mx, self.my);
+				// self.createFireworks(self.cw / 2, self.ch, self.mx, self.my);
+				self.createFireworks(self.cw / 2, 0, self.mx, self.my);
 			});
 
 		});
@@ -412,7 +415,8 @@ var Fireworks = function() {
 	var initialLaunchCount = 10;
 	while (initialLaunchCount--) {
 		setTimeout(function() {
-			self.fireworks.push(new Firework(self.cw / 2, self.ch, rand(50, self.cw - 50), rand(50, self.ch / 2) - 50));
+			// self.fireworks.push(new Firework(self.cw / 2, self.ch, rand(50, self.cw - 50), rand(50, self.ch / 2) - 50));
+			self.fireworks.push(new Firework(self.cw / 2, 0, rand(50, self.cw - 50), rand(50, self.ch / 2) - 50));
 		}, initialLaunchCount * 200);
 	}
 
