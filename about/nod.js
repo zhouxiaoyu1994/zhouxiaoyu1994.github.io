@@ -20,6 +20,7 @@ var Fireworks = function() {
 		self.dt = 0;
 		self.oldTime = Date.now();
 		self.canvas = document.createElement('canvas');
+		
 		self.canvasContainer = $('#canvas-container');
 
 		var canvasContainerDisabled = document.getElementById('canvas-container');
