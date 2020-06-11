@@ -59,18 +59,18 @@
         document.body.classList.add('dark');
       }
     }
-    let sun = '<img class="dark-img" src="/img/sun.png" srcset="/img/loading.gif">';
-    let moon = '<img class="dark-img" src="/img/moon.png" srcset="/img/loading.gif">'
+    let sun = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png" srcset="/img/loading.gif">';
+    let moon = '<img class="dark-img" src="https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png" srcset="/img/loading.gif">'
     document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?moon:sun;
     //点击事件
     function switchDarkMode() {
     	if ($('body').hasClass('dark')) {
-        $("#dark").html("<img class='dark-img' src='/img/sun.png'>");
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/sun.png'>");
     		document.body.classList.remove('dark');
     		localStorage.setItem('noDark', '1');
     		localStorage.setItem('dark', '0');
     	} else {
-        $("#dark").html("<img class='dark-img' src='/img/moon.png'>");
+        $("#dark").html("<img class='dark-img' src='https://frontend-studio-1256354221.file.myqcloud.com/img/moon.png'>");
     		document.body.classList.add('dark');
     		localStorage.setItem('dark', '1');
     		localStorage.setItem('noDark', '0');
@@ -179,7 +179,7 @@
           style=margin-top:0>
           
             <div class="about-avatar">
-              <img src="/img/avatar.jpg" srcset="/img/loading.gif"
+              <img src="https://frontend-studio-1256354221.file.myqcloud.com/img/avatar.jpg" srcset="/img/loading.gif"
                    class="img-fluid" alt="avatar">
             </div>
           
